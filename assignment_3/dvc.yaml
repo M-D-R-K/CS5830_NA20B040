@@ -3,6 +3,8 @@ stages:
     cmd: python src/download.py
     outs:
     - Files/Files
+    deps:
+    - params.yaml
   prepare:
     cmd: python src/prepare.py
     deps:
@@ -16,3 +18,10 @@ stages:
     - Files/processing_dataframes
     outs:
     - Files/processed_dataframes
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+    - Files/extracted_dataframes
+    - Files/processed_dataframes
+    outs:
+    - Files/outputs

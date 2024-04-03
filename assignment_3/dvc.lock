@@ -2,9 +2,66 @@ schema: '2.0'
 stages:
   download:
     cmd: python src/download.py
+    deps:
+    - path: params.yaml
+      hash: md5
+      md5: 37e12e94718638acfe1c267dedfe4c56
+      size: 52
     outs:
     - path: Files/Files
       hash: md5
-      md5: 79dcffde12cc6d74c91e32c08b7244fb.dir
-      size: 27080066
-      nfiles: 7
+      md5: 9a09e4ad32d70ad6de4e34fe7e950658.dir
+      size: 6098071
+      nfiles: 1
+  prepare:
+    cmd: python src/prepare.py
+    deps:
+    - path: Files/Files
+      hash: md5
+      md5: 9a09e4ad32d70ad6de4e34fe7e950658.dir
+      size: 6098071
+      nfiles: 1
+    outs:
+    - path: Files/extracted_dataframes
+      hash: md5
+      md5: e8da0afd4432f6d62cb780afd5d14626.dir
+      size: 347
+      nfiles: 1
+    - path: Files/processing_dataframes
+      hash: md5
+      md5: 0cb6721ec2387d4d52ef0d7b601ef8d0.dir
+      size: 221477
+      nfiles: 1
+  process:
+    cmd: python src/process.py
+    deps:
+    - path: Files/processing_dataframes
+      hash: md5
+      md5: 0cb6721ec2387d4d52ef0d7b601ef8d0.dir
+      size: 221477
+      nfiles: 1
+    outs:
+    - path: Files/processed_dataframes
+      hash: md5
+      md5: 988c1219bd4b6d6ef0e1e47f69e63900.dir
+      size: 630
+      nfiles: 1
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+    - path: Files/extracted_dataframes
+      hash: md5
+      md5: e8da0afd4432f6d62cb780afd5d14626.dir
+      size: 347
+      nfiles: 1
+    - path: Files/processed_dataframes
+      hash: md5
+      md5: 988c1219bd4b6d6ef0e1e47f69e63900.dir
+      size: 630
+      nfiles: 1
+    outs:
+    - path: Files/outputs
+      hash: md5
+      md5: adbbdb87d537a76fb4c2024b0f123250.dir
+      size: 228
+      nfiles: 1

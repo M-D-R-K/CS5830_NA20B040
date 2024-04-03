@@ -63,9 +63,12 @@ def check_monthly_aggregates(data):
         return False
 
 def main():
-    params = yaml.safe_load(open("../params.yaml"))['download']
-    #year = params['year']
-    year = range(1901,2024)
+    """
+    
+    """
+    params = yaml.safe_load(open("params.yaml"))['download']
+    year = params['year']
+    #year = range(1901,2024)
     n_locs = params['n_locs']
     
     years = split(year,4)

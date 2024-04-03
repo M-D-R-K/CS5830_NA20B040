@@ -16,7 +16,7 @@ def main():
         for file in file_names:
             file_path = f'../assignment_3/Files/processing_dataframes/{year}/{file}'
             processed_df = process(file_path)
-            processed_df.to_csv(f'../assignment_3/Files/processed_dataframes/{year}/pro_month_avg_{file}', index=False)
+            processed_df.to_csv(f'../assignment_3/Files/processed_dataframes/{year}/{file}', index=False)
         
 if __name__ == "__main__":
     main()
