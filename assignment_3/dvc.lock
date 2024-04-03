@@ -1,0 +1,10 @@
+schema: '2.0'
+stages:
+  download:
+    cmd: python src/download.py
+    outs:
+    - path: Files/Files
+      hash: md5
+      md5: 79dcffde12cc6d74c91e32c08b7244fb.dir
+      size: 27080066
+      nfiles: 7

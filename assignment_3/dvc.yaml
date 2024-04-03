@@ -1,0 +1,12 @@
+stages:
+  download:
+    cmd: python src/download.py
+    outs:
+    - Files/Files
+  prepare:
+    cmd: python src/prepare.py
+    deps:
+    - Files/Files
+    outs:
+    - Files/extracted_dataframes
+    - Files/processing_dataframes

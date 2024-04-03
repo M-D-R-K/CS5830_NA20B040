@@ -1,1 +1,4 @@
 #Required packages go here
+beautifulsoup4
+dvc
+pandas
