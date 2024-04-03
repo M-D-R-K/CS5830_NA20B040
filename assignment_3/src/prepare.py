@@ -19,7 +19,7 @@ def extract_monthly_averages(file):
                 compute_cols.append(daily_averages[i])
                 extract_cols.append(month_averages[i])
             
-            elif hourly_averages[i] in df.columns:
+            if hourly_averages[i] in df.columns:
                 compute_cols.append(hourly_averages[i])
                 extract_cols.append(month_averages[i])
     
