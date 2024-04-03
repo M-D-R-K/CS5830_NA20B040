@@ -10,3 +10,9 @@ stages:
     outs:
     - Files/extracted_dataframes
     - Files/processing_dataframes
+  process:
+    cmd: python src/process.py
+    deps:
+    - Files/processing_dataframes
+    outs:
+    - Files/processed_dataframes

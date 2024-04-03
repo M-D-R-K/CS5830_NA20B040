@@ -40,8 +40,8 @@ def main():
         for file in file_names:
             file_path = f'../assignment_3/Files/Files/{year}/{file}'
             extracted_df, processing_df = extract_monthly_averages(file_path)
-            extracted_df.to_csv(f'../assignment_3/Files/extracted_dataframes/{year}/ex_month_avg_{file}')
-            processing_df.to_csv(f'../assignment_3/Files/processing_dataframes/{year}/processing_{file}')
+            extracted_df.to_csv(f'../assignment_3/Files/extracted_dataframes/{year}/ex_month_avg_{file}', index=False)
+            processing_df.to_csv(f'../assignment_3/Files/processing_dataframes/{year}/processing_{file}', index=False)
         
     
     

@@ -2,3 +2,4 @@
 beautifulsoup4
 dvc
 pandas
+scikit-learn
