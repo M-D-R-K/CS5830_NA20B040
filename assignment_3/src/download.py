@@ -9,17 +9,29 @@ import shutil
 from urllib.request import urlopen, urlretrieve
 from bs4 import BeautifulSoup
 
+
 def split(a, n):
-    '''
+    """
     splits an array a into n mostly equal blocks
-    '''
+    Args:
+        a list: an array of integers
+        n int: number of blocks to divide a into
+
+    Returns:
+        list: list of lists of a divided into n parts
+    """
     k, m = divmod(len(a), n)
     return list(a[i*k+min(i, m):(i+1)*k+min(i+1, m)] for i in range(n))
 
+
+
 def download_years_list(years, num_files):
-    '''
+    """
     Takes an input 'years' and and then downloads the files for the all the years. Saves each year files in their own folder.
-    '''
+    Args:
+        years List: List of years
+        num_files int: number of files to download from each year
+    """
     for l in years:
         try:
             os.makedirs(f'../assignment_3/Files/Files/{l}')
@@ -50,28 +62,38 @@ def download_years_list(years, num_files):
             if check_monthly_aggregates(downloaded_files[i]):
                 os.remove(downloaded_files[i])
 
-def check_monthly_aggregates(data):
-    df = pd.read_csv(data)
-    df.dropna(how='all', axis=1, inplace=True)
+
+
+def check_monthly_aggregates(data_path):
+    """
+    Function to check whether the monthly columns are completely empty or not. Returns True if empty
+    Args:
+        data string: path to the data file
+
+    Returns:
+        bool: Are all the monthly fields completely empty? If yes, return True
+    """
+    df = pd.read_csv(data_path)
+    df.dropna(how='all', axis=1, inplace=True)  #drop all empty columns
     cols= df.columns
-    monthly_cols = [col[7:] for col in cols if re.search('Monthly', col)]
-    #hourly_cols = [col[6:] for col in cols if re.search('Hourly', col)]
-    #daily_cols = [col[5:] for col in cols if re.search('Daily', col)]
+    monthly_cols = [col[7:] for col in cols if re.search('Monthly', col)] #use re to search for fields containing the word Monthly which is 7 letters long.
+    
     if monthly_cols == []:
         return True
     else:
         return False
 
+
+
 def main():
     """
-    
+    Creates multiple Processes(upto 4): To download the list of years given in the params.yaml folder
     """
     params = yaml.safe_load(open("params.yaml"))['download']
     year = params['year']
-    #year = range(1901,2024)
     n_locs = params['n_locs']
     
-    years = split(year,4)
+    years = split(year,4) #Divide the years into 4 parts for parallel downloading
     years = [x for x in years if x !=[]]
     processes = []
     

@@ -3,7 +3,18 @@ import os
 from sklearn.metrics import r2_score
 import json
 
+
+
 def compare_averages(computed_file_path, extracted_file_path):
+    """
+    generate r2 scores of the two given dataframes
+    Args:
+        computed_file_path string: path of computed dataframe (monthly averages computed from dailies)
+        extracted_file_path string: path of extracted dataframe
+
+    Returns:
+        dict: dictionary of r_2 scores
+    """
     month_dict = {
         'MonthlyMeanTemperature' : ['DailyAverageDryBulbTemperature', 'HourlyDryBulbTemperature'],
         'MonthlySeaLevelPressure' : ['DailyAverageSeaLevelPressure', 'HourlySeaLevelPressure'],
@@ -16,6 +27,10 @@ def compare_averages(computed_file_path, extracted_file_path):
     
     r2_scores = {k : {'Daily Score' : None, 'Hourly Score' : None} for k in month_dict.keys()}
     cols = concat_df.columns
+    
+    
+    
+    #compute r_2 scores of corresponding columns using the month_dict given above
     for k, v in month_dict.items():
         if k in cols:
             if v[0] in cols:
@@ -29,7 +44,12 @@ def compare_averages(computed_file_path, extracted_file_path):
     
     return r2_scores
     
+    
+    
 def main():
+    """
+    Computes and stores r2 scores  as JSON files in a directory.
+    """
     years = os.listdir('../assignment_3/Files/extracted_dataframes/')
     
     for year in years:
@@ -43,6 +63,8 @@ def main():
             name = file.split()[0]
             with open(f'../assignment_3/Files/outputs/{year}/{name}.json', 'w') as f:
                 json.dump(scores_dict, f)
+               
+               
                 
 if __name__ == "__main__":
     main()

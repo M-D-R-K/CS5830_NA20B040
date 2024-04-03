@@ -1,12 +1,22 @@
 import pandas as pd
 import os
 
-def extract_monthly_averages(file):
+
+
+def extract_monthly_averages(file_path):
+    """
+    Extracts the monthly averages and the hourly and daily fields corresponding to it and stores them in separate dataframes in separate locations
+    Args:
+        file_path string: path of csv file
+
+    Returns:
+        dataframe: two dataframes, one contains the extracted monthly columns and the other contains the daily and hourly columns.
+    """
     month_averages = ['MonthlyMeanTemperature', 'MonthlySeaLevelPressure', 'MonthlyStationPressure']
     hourly_averages = ['HourlyDryBulbTemperature', 'HourlySeaLevelPressure', 'HourlyStationPressure']
     daily_averages = ['DailyAverageDryBulbTemperature', 'DailyAverageSeaLevelPressure', 'DailyAverageStationPressure']
     
-    df = pd.read_csv(file, parse_dates=['DATE'])
+    df = pd.read_csv(file_path, parse_dates=['DATE'])
     df = df.select_dtypes(include=['datetime64[ns]', 'float64'])
     df.dropna(how='all', axis=1, inplace=True)
     
@@ -28,7 +38,12 @@ def extract_monthly_averages(file):
     compute_df = df[compute_cols]
     return extracted_df, compute_df
 
+
+
 def main():
+    """
+    Extracts required Fields in two dataframes and stores them as csvs in two different locations
+    """
     years = os.listdir('../assignment_3/Files/Files/')
     
     for year in years :
