@@ -1,0 +1,43 @@
+[2024-03-03T02:37:12.827+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_data_files.get_files scheduled__2016-12-19T00:00:00+00:00 [queued]>
+[2024-03-03T02:37:12.844+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_data_files.get_files scheduled__2016-12-19T00:00:00+00:00 [queued]>
+[2024-03-03T02:37:12.844+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-03-03T02:37:12.864+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): get_files> on 2016-12-19 00:00:00+00:00
+[2024-03-03T02:37:12.873+0000] {standard_task_runner.py:60} INFO - Started process 1079 to run task
+[2024-03-03T02:37:12.877+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'fetch_data_files', 'get_files', 'scheduled__2016-12-19T00:00:00+00:00', '--job-id', '3346', '--raw', '--subdir', 'DAGS_FOLDER/dummy_dag.py', '--cfg-path', '/tmp/tmp7u8xws3j']
+[2024-03-03T02:37:12.884+0000] {standard_task_runner.py:88} INFO - Job 3346: Subtask get_files
+[2024-03-03T02:37:12.915+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/settings.py:194 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-03-03T02:37:12.980+0000] {task_command.py:423} INFO - Running <TaskInstance: fetch_data_files.get_files scheduled__2016-12-19T00:00:00+00:00 [running]> on host 887b52fd1a6d
+[2024-03-03T02:37:13.105+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fetch_data_files' AIRFLOW_CTX_TASK_ID='get_files' AIRFLOW_CTX_EXECUTION_DATE='2016-12-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2016-12-19T00:00:00+00:00'
+[2024-03-03T02:37:29.483+0000] {logging_mixin.py:188} WARNING - /usr/local/lib/python3.11/zipfile.py:1558 UserWarning: Duplicate name: '1901\\02960099999.csv'
+[2024-03-03T02:38:08.512+0000] {logging_mixin.py:188} WARNING - /usr/local/lib/python3.11/zipfile.py:1558 UserWarning: Duplicate name: '1902\\02981099999.csv'
+[2024-03-03T02:38:42.184+0000] {logging_mixin.py:188} WARNING - /usr/local/lib/python3.11/zipfile.py:1558 UserWarning: Duplicate name: '1903\\22707099999.csv'
+[2024-03-03T02:38:47.990+0000] {logging_mixin.py:188} WARNING - /usr/local/lib/python3.11/zipfile.py:1558 UserWarning: Duplicate name: '1904\\02907099999.csv'
+[2024-03-03T02:38:52.723+0000] {logging_mixin.py:188} WARNING - /usr/local/lib/python3.11/zipfile.py:1558 UserWarning: Duplicate name: '1904\\02950099999.csv'
+[2024-03-03T02:39:21.644+0000] {taskinstance.py:2728} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dummy_dag.py", line 42, in download_years_list
+    zip = zipfile.ZipFile('/opt/airflow/Files/Files.zip','a', zipfile.ZIP_DEFLATED, False)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/zipfile.py", line 1787, in write
+    zinfo = ZipInfo.from_file(filename, arcname,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/zipfile.py", line 534, in from_file
+    st = os.stat(filename)
+         ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/airflow/Files/02907099999.csv'
+[2024-03-03T02:39:21.810+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=fetch_data_files, task_id=get_files, execution_date=20161219T000000, start_date=20240303T023712, end_date=20240303T023921
+[2024-03-03T02:39:21.977+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 3346 for task get_files ([Errno 2] No such file or directory: '/opt/airflow/Files/02907099999.csv'; 1079)
+[2024-03-03T02:39:22.272+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-03-03T02:39:22.296+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check

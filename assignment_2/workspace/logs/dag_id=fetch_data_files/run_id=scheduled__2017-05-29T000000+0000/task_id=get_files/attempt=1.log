@@ -1,0 +1,37 @@
+[2024-03-03T02:43:38.115+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_data_files.get_files scheduled__2017-05-29T00:00:00+00:00 [queued]>
+[2024-03-03T02:43:38.125+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_data_files.get_files scheduled__2017-05-29T00:00:00+00:00 [queued]>
+[2024-03-03T02:43:38.126+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-03-03T02:43:38.142+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): get_files> on 2017-05-29 00:00:00+00:00
+[2024-03-03T02:43:38.149+0000] {standard_task_runner.py:60} INFO - Started process 1464 to run task
+[2024-03-03T02:43:38.152+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'fetch_data_files', 'get_files', 'scheduled__2017-05-29T00:00:00+00:00', '--job-id', '3508', '--raw', '--subdir', 'DAGS_FOLDER/dummy_dag.py', '--cfg-path', '/tmp/tmplm6cgg33']
+[2024-03-03T02:43:38.156+0000] {standard_task_runner.py:88} INFO - Job 3508: Subtask get_files
+[2024-03-03T02:43:38.176+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/settings.py:194 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-03-03T02:43:38.228+0000] {task_command.py:423} INFO - Running <TaskInstance: fetch_data_files.get_files scheduled__2017-05-29T00:00:00+00:00 [running]> on host 887b52fd1a6d
+[2024-03-03T02:43:38.343+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fetch_data_files' AIRFLOW_CTX_TASK_ID='get_files' AIRFLOW_CTX_EXECUTION_DATE='2017-05-29T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2017-05-29T00:00:00+00:00'
+[2024-03-03T02:43:46.961+0000] {taskinstance.py:2728} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dummy_dag.py", line 44, in download_years_list
+    zip.write(f'/opt/airflow/Files/{x[i]}',f'{l}\\{x[i]}', zipfile.ZIP_DEFLATED)
+  File "/usr/local/lib/python3.11/zipfile.py", line 1787, in write
+    zinfo = ZipInfo.from_file(filename, arcname,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/zipfile.py", line 534, in from_file
+    st = os.stat(filename)
+         ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/airflow/Files/02907099999.csv'
+[2024-03-03T02:43:46.995+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=fetch_data_files, task_id=get_files, execution_date=20170529T000000, start_date=20240303T024338, end_date=20240303T024346
+[2024-03-03T02:43:47.016+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 3508 for task get_files ([Errno 2] No such file or directory: '/opt/airflow/Files/02907099999.csv'; 1464)
+[2024-03-03T02:43:47.066+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-03-03T02:43:47.091+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check

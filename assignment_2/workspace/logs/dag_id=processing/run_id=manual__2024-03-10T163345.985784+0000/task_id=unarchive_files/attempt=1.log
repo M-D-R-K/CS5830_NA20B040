@@ -1,0 +1,14 @@
+[2024-03-10T16:33:51.415+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: processing.unarchive_files manual__2024-03-10T16:33:45.985784+00:00 [queued]>
+[2024-03-10T16:33:51.431+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: processing.unarchive_files manual__2024-03-10T16:33:45.985784+00:00 [queued]>
+[2024-03-10T16:33:51.432+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-03-10T16:33:51.475+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): unarchive_files> on 2024-03-10 16:33:45.985784+00:00
+[2024-03-10T16:33:51.487+0000] {standard_task_runner.py:60} INFO - Started process 839 to run task
+[2024-03-10T16:33:51.492+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'processing', 'unarchive_files', 'manual__2024-03-10T16:33:45.985784+00:00', '--job-id', '53', '--raw', '--subdir', 'DAGS_FOLDER/process_data.py', '--cfg-path', '/tmp/tmpamf5e1lo']
+[2024-03-10T16:33:51.496+0000] {standard_task_runner.py:88} INFO - Job 53: Subtask unarchive_files
+[2024-03-10T16:33:51.531+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/settings.py:194 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-03-10T16:33:51.587+0000] {task_command.py:423} INFO - Running <TaskInstance: processing.unarchive_files manual__2024-03-10T16:33:45.985784+00:00 [running]> on host 65d624ba7e11
+[2024-03-10T16:33:51.692+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='processing' AIRFLOW_CTX_TASK_ID='unarchive_files' AIRFLOW_CTX_EXECUTION_DATE='2024-03-10T16:33:45.985784+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-03-10T16:33:45.985784+00:00'
+[2024-03-10T16:34:01.078+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-03-10T16:34:01.091+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=processing, task_id=unarchive_files, execution_date=20240310T163345, start_date=20240310T163351, end_date=20240310T163401
+[2024-03-10T16:34:01.148+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-03-10T16:34:01.204+0000] {taskinstance.py:3309} INFO - 6 downstream tasks scheduled from follow-on schedule check

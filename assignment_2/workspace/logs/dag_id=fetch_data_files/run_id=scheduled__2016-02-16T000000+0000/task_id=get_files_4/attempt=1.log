@@ -1,0 +1,98 @@
+[2024-03-03T03:16:05.351+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_data_files.get_files_4 scheduled__2016-02-16T00:00:00+00:00 [queued]>
+[2024-03-03T03:16:05.368+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_data_files.get_files_4 scheduled__2016-02-16T00:00:00+00:00 [queued]>
+[2024-03-03T03:16:05.370+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-03-03T03:16:05.395+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): get_files_4> on 2016-02-16 00:00:00+00:00
+[2024-03-03T03:16:05.406+0000] {standard_task_runner.py:60} INFO - Started process 840 to run task
+[2024-03-03T03:16:05.411+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'fetch_data_files', 'get_files_4', 'scheduled__2016-02-16T00:00:00+00:00', '--job-id', '296', '--raw', '--subdir', 'DAGS_FOLDER/dummy_dag.py', '--cfg-path', '/tmp/tmph48a4ej2']
+[2024-03-03T03:16:05.415+0000] {standard_task_runner.py:88} INFO - Job 296: Subtask get_files_4
+[2024-03-03T03:16:05.446+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/settings.py:194 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-03-03T03:16:05.519+0000] {task_command.py:423} INFO - Running <TaskInstance: fetch_data_files.get_files_4 scheduled__2016-02-16T00:00:00+00:00 [running]> on host eb03c8b8b5fd
+[2024-03-03T03:16:05.668+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fetch_data_files' AIRFLOW_CTX_TASK_ID='get_files_4' AIRFLOW_CTX_EXECUTION_DATE='2016-02-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2016-02-16T00:00:00+00:00'
+[2024-03-03T03:16:06.942+0000] {taskinstance.py:2728} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dummy_dag.py", line 29, in download_years_list
+    page = urlopen(url)
+           ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/urllib/request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/urllib/request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/urllib/request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/urllib/request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 404: Not Found
+[2024-03-03T03:16:07.017+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=fetch_data_files, task_id=get_files_4, execution_date=20160216T000000, start_date=20240303T031605, end_date=20240303T031607
+[2024-03-03T03:16:07.064+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 296 for task get_files_4 (HTTP Error 404: Not Found; 840)
+[2024-03-03T03:16:07.116+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-03-03T03:16:07.145+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-03-03T03:32:00.880+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_data_files.get_files_4 scheduled__2016-02-16T00:00:00+00:00 [queued]>
+[2024-03-03T03:32:00.898+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_data_files.get_files_4 scheduled__2016-02-16T00:00:00+00:00 [queued]>
+[2024-03-03T03:32:00.899+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-03-03T03:32:00.932+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): get_files_4> on 2016-02-16 00:00:00+00:00
+[2024-03-03T03:32:00.941+0000] {standard_task_runner.py:60} INFO - Started process 884 to run task
+[2024-03-03T03:32:00.945+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'fetch_data_files', 'get_files_4', 'scheduled__2016-02-16T00:00:00+00:00', '--job-id', '293', '--raw', '--subdir', 'DAGS_FOLDER/dummy_dag.py', '--cfg-path', '/tmp/tmprmilet_z']
+[2024-03-03T03:32:00.948+0000] {standard_task_runner.py:88} INFO - Job 293: Subtask get_files_4
+[2024-03-03T03:32:00.972+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/settings.py:194 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-03-03T03:32:01.040+0000] {task_command.py:423} INFO - Running <TaskInstance: fetch_data_files.get_files_4 scheduled__2016-02-16T00:00:00+00:00 [running]> on host 716a53fa82e1
+[2024-03-03T03:32:01.171+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fetch_data_files' AIRFLOW_CTX_TASK_ID='get_files_4' AIRFLOW_CTX_EXECUTION_DATE='2016-02-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2016-02-16T00:00:00+00:00'
+[2024-03-03T03:32:02.466+0000] {taskinstance.py:2728} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dummy_dag.py", line 30, in download_years_list
+    page = urlopen(url)
+           ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/urllib/request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/urllib/request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/urllib/request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/urllib/request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 404: Not Found
+[2024-03-03T03:32:02.502+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=fetch_data_files, task_id=get_files_4, execution_date=20160216T000000, start_date=20240303T033200, end_date=20240303T033202
+[2024-03-03T03:32:02.563+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 293 for task get_files_4 (HTTP Error 404: Not Found; 884)
+[2024-03-03T03:32:02.575+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-03-03T03:32:02.610+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check

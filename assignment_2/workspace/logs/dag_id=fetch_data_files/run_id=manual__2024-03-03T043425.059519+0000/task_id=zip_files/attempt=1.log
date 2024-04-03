@@ -1,0 +1,31 @@
+[2024-03-03T04:54:23.923+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_data_files.zip_files manual__2024-03-03T04:34:25.059519+00:00 [queued]>
+[2024-03-03T04:54:23.932+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_data_files.zip_files manual__2024-03-03T04:34:25.059519+00:00 [queued]>
+[2024-03-03T04:54:23.933+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-03-03T04:54:23.945+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): zip_files> on 2024-03-03 04:34:25.059519+00:00
+[2024-03-03T04:54:23.952+0000] {standard_task_runner.py:60} INFO - Started process 442 to run task
+[2024-03-03T04:54:23.955+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'fetch_data_files', 'zip_files', 'manual__2024-03-03T04:34:25.059519+00:00', '--job-id', '22', '--raw', '--subdir', 'DAGS_FOLDER/dummy_dag.py', '--cfg-path', '/tmp/tmpxn93m_if']
+[2024-03-03T04:54:23.958+0000] {standard_task_runner.py:88} INFO - Job 22: Subtask zip_files
+[2024-03-03T04:54:23.975+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/settings.py:194 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-03-03T04:54:24.017+0000] {task_command.py:423} INFO - Running <TaskInstance: fetch_data_files.zip_files manual__2024-03-03T04:34:25.059519+00:00 [running]> on host 6470c64548f4
+[2024-03-03T04:54:24.090+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fetch_data_files' AIRFLOW_CTX_TASK_ID='zip_files' AIRFLOW_CTX_EXECUTION_DATE='2024-03-03T04:34:25.059519+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-03-03T04:34:25.059519+00:00'
+[2024-03-03T04:54:41.430+0000] {taskinstance.py:2728} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dummy_dag.py", line 47, in zip_files
+    os.remove('/opt/airflow/Files/Files')
+IsADirectoryError: [Errno 21] Is a directory: '/opt/airflow/Files/Files'
+[2024-03-03T04:54:41.451+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=fetch_data_files, task_id=zip_files, execution_date=20240303T043425, start_date=20240303T045423, end_date=20240303T045441
+[2024-03-03T04:54:41.470+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 22 for task zip_files ([Errno 21] Is a directory: '/opt/airflow/Files/Files'; 442)
+[2024-03-03T04:54:41.514+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-03-03T04:54:41.543+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check

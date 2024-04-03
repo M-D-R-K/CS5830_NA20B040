@@ -1,0 +1,15 @@
+[2024-03-03T02:08:29.380+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: example_dag.op scheduled__2023-09-16T00:00:00+00:00 [queued]>
+[2024-03-03T02:08:29.394+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: example_dag.op scheduled__2023-09-16T00:00:00+00:00 [queued]>
+[2024-03-03T02:08:29.395+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-03-03T02:08:29.432+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): op> on 2023-09-16 00:00:00+00:00
+[2024-03-03T02:08:29.441+0000] {standard_task_runner.py:60} INFO - Started process 5986 to run task
+[2024-03-03T02:08:29.445+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'example_dag', 'op', 'scheduled__2023-09-16T00:00:00+00:00', '--job-id', '2818', '--raw', '--subdir', 'DAGS_FOLDER/dummy_dag.py', '--cfg-path', '/tmp/tmphi21vk_y']
+[2024-03-03T02:08:29.450+0000] {standard_task_runner.py:88} INFO - Job 2818: Subtask op
+[2024-03-03T02:08:29.478+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/settings.py:194 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-03-03T02:08:29.539+0000] {task_command.py:423} INFO - Running <TaskInstance: example_dag.op scheduled__2023-09-16T00:00:00+00:00 [running]> on host 4862f71c08f1
+[2024-03-03T02:08:29.865+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='example_dag' AIRFLOW_CTX_TASK_ID='op' AIRFLOW_CTX_EXECUTION_DATE='2023-09-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-09-16T00:00:00+00:00'
+[2024-03-03T02:08:29.866+0000] {logging_mixin.py:188} INFO - Hello World!
+[2024-03-03T02:08:29.867+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-03-03T02:08:29.885+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=example_dag, task_id=op, execution_date=20230916T000000, start_date=20240303T020829, end_date=20240303T020829
+[2024-03-03T02:08:29.940+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-03-03T02:08:29.966+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check

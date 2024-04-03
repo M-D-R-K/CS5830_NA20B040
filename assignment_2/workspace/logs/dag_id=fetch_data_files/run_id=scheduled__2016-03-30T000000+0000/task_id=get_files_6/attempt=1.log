@@ -1,0 +1,15 @@
+[2024-03-03T03:35:17.850+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_data_files.get_files_6 scheduled__2016-03-30T00:00:00+00:00 [queued]>
+[2024-03-03T03:35:17.862+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_data_files.get_files_6 scheduled__2016-03-30T00:00:00+00:00 [queued]>
+[2024-03-03T03:35:17.863+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-03-03T03:35:17.883+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): get_files_6> on 2016-03-30 00:00:00+00:00
+[2024-03-03T03:35:17.893+0000] {standard_task_runner.py:60} INFO - Started process 1409 to run task
+[2024-03-03T03:35:17.898+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'fetch_data_files', 'get_files_6', 'scheduled__2016-03-30T00:00:00+00:00', '--job-id', '541', '--raw', '--subdir', 'DAGS_FOLDER/dummy_dag.py', '--cfg-path', '/tmp/tmp74p5f63j']
+[2024-03-03T03:35:17.903+0000] {standard_task_runner.py:88} INFO - Job 541: Subtask get_files_6
+[2024-03-03T03:35:17.934+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/settings.py:194 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-03-03T03:35:18.015+0000] {task_command.py:423} INFO - Running <TaskInstance: fetch_data_files.get_files_6 scheduled__2016-03-30T00:00:00+00:00 [running]> on host 716a53fa82e1
+[2024-03-03T03:35:18.171+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fetch_data_files' AIRFLOW_CTX_TASK_ID='get_files_6' AIRFLOW_CTX_EXECUTION_DATE='2016-03-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2016-03-30T00:00:00+00:00'
+[2024-03-03T03:35:18.174+0000] {logging_mixin.py:188} INFO - [2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]
+[2024-03-03T03:35:18.175+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-03-03T03:35:18.192+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=fetch_data_files, task_id=get_files_6, execution_date=20160330T000000, start_date=20240303T033517, end_date=20240303T033518
+[2024-03-03T03:35:18.234+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-03-03T03:35:18.317+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check
