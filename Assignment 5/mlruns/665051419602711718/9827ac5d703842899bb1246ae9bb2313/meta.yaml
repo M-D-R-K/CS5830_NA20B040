@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/665051419602711718/9827ac5d703842899bb1246ae9bb2313/artifacts
+end_time: 1713694418133
+entry_point_name: ''
+experiment_id: '665051419602711718'
+lifecycle_stage: active
+run_id: 9827ac5d703842899bb1246ae9bb2313
+run_name: too low learning rate
+run_uuid: 9827ac5d703842899bb1246ae9bb2313
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713694374504
+status: 3
+tags: []
+user_id: moham

@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/d8e2afa2718a487589f9fea118d3043a/artifacts
+deleted_time: 1713623999447
+end_time: 1713623362418
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: d8e2afa2718a487589f9fea118d3043a
+run_name: nosy-dog-165
+run_uuid: d8e2afa2718a487589f9fea118d3043a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713623331326
+status: 3
+tags: []
+user_id: moham

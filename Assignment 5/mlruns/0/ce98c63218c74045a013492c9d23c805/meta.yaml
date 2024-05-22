@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/ce98c63218c74045a013492c9d23c805/artifacts
+deleted_time: 1713625867227
+end_time: 1713624372751
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: ce98c63218c74045a013492c9d23c805
+run_name: lyrical-sow-504
+run_uuid: ce98c63218c74045a013492c9d23c805
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713624365229
+status: 3
+tags: []
+user_id: moham

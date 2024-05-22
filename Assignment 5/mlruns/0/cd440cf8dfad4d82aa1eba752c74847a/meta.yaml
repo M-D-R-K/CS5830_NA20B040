@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/cd440cf8dfad4d82aa1eba752c74847a/artifacts
+deleted_time: 1713623999449
+end_time: 1713623411092
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: cd440cf8dfad4d82aa1eba752c74847a
+run_name: mysterious-bug-51
+run_uuid: cd440cf8dfad4d82aa1eba752c74847a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713623365429
+status: 3
+tags: []
+user_id: moham

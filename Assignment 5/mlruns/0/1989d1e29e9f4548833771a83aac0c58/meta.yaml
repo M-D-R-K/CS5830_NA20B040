@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/1989d1e29e9f4548833771a83aac0c58/artifacts
+end_time: 1713625964544
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1989d1e29e9f4548833771a83aac0c58
+run_name: persistent-snail-366
+run_uuid: 1989d1e29e9f4548833771a83aac0c58
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713625937069
+status: 3
+tags: []
+user_id: moham

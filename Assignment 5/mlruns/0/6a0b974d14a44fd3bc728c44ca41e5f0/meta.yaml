@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/6a0b974d14a44fd3bc728c44ca41e5f0/artifacts
+deleted_time: 1713625867255
+end_time: 1713624010562
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 6a0b974d14a44fd3bc728c44ca41e5f0
+run_name: brawny-bird-83
+run_uuid: 6a0b974d14a44fd3bc728c44ca41e5f0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713623984978
+status: 3
+tags: []
+user_id: moham

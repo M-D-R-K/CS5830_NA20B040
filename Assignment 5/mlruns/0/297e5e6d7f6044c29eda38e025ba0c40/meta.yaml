@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/297e5e6d7f6044c29eda38e025ba0c40/artifacts
+deleted_time: 1713625867232
+end_time: 1713624324648
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 297e5e6d7f6044c29eda38e025ba0c40
+run_name: nervous-rook-434
+run_uuid: 297e5e6d7f6044c29eda38e025ba0c40
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713624286165
+status: 3
+tags: []
+user_id: moham

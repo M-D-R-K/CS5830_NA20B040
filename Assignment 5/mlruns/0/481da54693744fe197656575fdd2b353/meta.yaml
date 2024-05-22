@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/481da54693744fe197656575fdd2b353/artifacts
+deleted_time: 1713625867228
+end_time: 1713624365177
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 481da54693744fe197656575fdd2b353
+run_name: intrigued-midge-411
+run_uuid: 481da54693744fe197656575fdd2b353
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713624324702
+status: 3
+tags: []
+user_id: moham

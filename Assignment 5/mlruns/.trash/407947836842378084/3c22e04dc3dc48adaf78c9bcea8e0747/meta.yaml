@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/407947836842378084/3c22e04dc3dc48adaf78c9bcea8e0747/artifacts
+deleted_time: 1713693623908
+end_time: 1713691860263
+entry_point_name: ''
+experiment_id: '407947836842378084'
+lifecycle_stage: deleted
+run_id: 3c22e04dc3dc48adaf78c9bcea8e0747
+run_name: optimal learning rate with momentum
+run_uuid: 3c22e04dc3dc48adaf78c9bcea8e0747
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713691772251
+status: 3
+tags: []
+user_id: moham

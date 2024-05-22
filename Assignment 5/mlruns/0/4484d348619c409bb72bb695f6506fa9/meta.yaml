@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/4484d348619c409bb72bb695f6506fa9/artifacts
+deleted_time: 1713623999448
+end_time: 1713623772970
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 4484d348619c409bb72bb695f6506fa9
+run_name: intrigued-mare-814
+run_uuid: 4484d348619c409bb72bb695f6506fa9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713623706013
+status: 3
+tags: []
+user_id: moham

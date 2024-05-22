@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/ca76b31a11f4446b912ce1fbe095cc82/artifacts
+deleted_time: 1713623999455
+end_time: 1713623328449
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: ca76b31a11f4446b912ce1fbe095cc82
+run_name: handsome-finch-898
+run_uuid: ca76b31a11f4446b912ce1fbe095cc82
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713623288688
+status: 3
+tags: []
+user_id: moham

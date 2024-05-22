@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/89e845fe375c4bceb42cc6c84accfdbc/artifacts
+deleted_time: 1713623999455
+end_time: 1713623286193
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 89e845fe375c4bceb42cc6c84accfdbc
+run_name: able-swan-986
+run_uuid: 89e845fe375c4bceb42cc6c84accfdbc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713623258607
+status: 3
+tags: []
+user_id: moham

@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/1e2dc82b7c0140d8b12a82c3c8758c28/artifacts
+deleted_time: 1713625867247
+end_time: 1713624142105
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 1e2dc82b7c0140d8b12a82c3c8758c28
+run_name: stylish-bug-582
+run_uuid: 1e2dc82b7c0140d8b12a82c3c8758c28
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713624098375
+status: 3
+tags: []
+user_id: moham

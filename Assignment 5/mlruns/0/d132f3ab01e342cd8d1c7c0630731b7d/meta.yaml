@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/d132f3ab01e342cd8d1c7c0630731b7d/artifacts
+deleted_time: 1713623999430
+end_time: 1713623856710
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: d132f3ab01e342cd8d1c7c0630731b7d
+run_name: peaceful-seal-704
+run_uuid: d132f3ab01e342cd8d1c7c0630731b7d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713623812169
+status: 3
+tags: []
+user_id: moham

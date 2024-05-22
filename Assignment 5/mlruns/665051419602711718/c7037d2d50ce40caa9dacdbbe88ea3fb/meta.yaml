@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/665051419602711718/c7037d2d50ce40caa9dacdbbe88ea3fb/artifacts
+end_time: 1713694461384
+entry_point_name: ''
+experiment_id: '665051419602711718'
+lifecycle_stage: active
+run_id: c7037d2d50ce40caa9dacdbbe88ea3fb
+run_name: optimal learning rate
+run_uuid: c7037d2d50ce40caa9dacdbbe88ea3fb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713694418149
+status: 3
+tags: []
+user_id: moham

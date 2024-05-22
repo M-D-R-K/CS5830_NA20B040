@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/dc7bf3db74d04657a7f77a0307257ba7/artifacts
+deleted_time: 1713623999430
+end_time: 1713623907956
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: dc7bf3db74d04657a7f77a0307257ba7
+run_name: legendary-moth-816
+run_uuid: dc7bf3db74d04657a7f77a0307257ba7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713623859284
+status: 3
+tags: []
+user_id: moham

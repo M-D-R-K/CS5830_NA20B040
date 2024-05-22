@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/d06100584838409bb5bbe3a94230debd/artifacts
+deleted_time: 1713623999436
+end_time: 1713623809272
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: d06100584838409bb5bbe3a94230debd
+run_name: thundering-elk-482
+run_uuid: d06100584838409bb5bbe3a94230debd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713623775701
+status: 3
+tags: []
+user_id: moham
